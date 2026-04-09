@@ -1,6 +1,8 @@
 
+
+
 from src.pipeline import EtlPipeline, ETLComponent,IComponentContext
-#import src.config.customer_config as conf 
+#import config.customer_config as conf 
 from testcase.retail_config import cus_pipe_ctx
 
 

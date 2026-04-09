@@ -1,0 +1,20 @@
+python -c "import data_simulator; print(data_simulator.__file__)"
+
+python -c "import sys; sys.path.insert(0, 'C:\\Users\\fredj\\Documents\\D\\01_data_science_projects\\01_data_sim_claude_test'); import data_simulator; print(data_simulator.__file__)"
+
+dir C:\\Users\\fredj\\anaconda3\\envs\\mlops\Lib\site-packages\ | findstr data_simulator
+
+
+type C:\Users\fredj\anaconda3\envs\mlops\Lib\site-packages\__editable__.data_simulator-0.1.0.pth
+
+
+python -c "import data_simulator; print(data_simulator.__file__)"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import data_simulator; print(data_simulator.__file__)
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "...\01_data_sim_claude_test\src\data_simulator\__init__.py", line 1, in <module>
+    from data_simulator.annotations.fault import IFault
+  File "...\01_data_sim_claude_test\src\data_simulator\annotations\fault.py", line 5, in <module>
+    from interface import IAnnotation
+ModuleNotFoundError: No module named 'interface'
