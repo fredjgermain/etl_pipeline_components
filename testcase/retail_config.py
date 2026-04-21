@@ -93,7 +93,4 @@ cus_ldr = ldr_factory.make_component('customer_loader', customer_loading_func, o
 # ! ETLPipelineContext
 cus_pipe_ctx = ETLPipelineContext( 
   name='customer pipeline', env='dev', version='0', 
-  extractors=[cus_ext, cus_ext_ref], 
-  validators=validators, 
-  transformers=[cus_merge_trf], 
-  loaders=[cus_ldr]) 
+  components=[cus_ext, cus_ext_ref, *validators, cus_merge_trf, cus_ldr])

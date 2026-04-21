@@ -1,9 +1,6 @@
 
-
-
-from src.pipeline import EtlPipeline, ETLComponent,IComponentContext
-#import config.customer_config as conf 
-from testcase.retail_config import cus_pipe_ctx
+from src.pipeline import EtlPipeline, ETLComponent,IComponentContext 
+from testcase.retail_config import cus_pipe_ctx 
 
 
 def main() -> None:
@@ -16,18 +13,10 @@ def main() -> None:
   # ! Pipeline configs 
   etl = EtlPipeline(ctx = cus_pipe_ctx) 
   
-  etl.run_pipeline() 
-  components:list[ETLComponent[IComponentContext]] = [*etl.ctx.extractors, *etl.ctx.validators, *etl.ctx.transformers, *etl.ctx.loaders]
-  for c in components: 
+  etl.run() 
+  for c in etl.ctx.components: 
     print(c.ctx.name, c.ctx.success) # ! loader failed ERRNO 2
     if not c.ctx.success:
       print(c.ctx.error)
-
-  
-  # etl.run_extractor() 
-  # etl.run_validator() 
-  # etl.run_transformer() 
-  # etl.run_loader() 
-  #etl.write_logs() 
 
 main()
